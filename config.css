@@ -1,6 +1,16 @@
-/******************************************
-/* LAYOUT                   
-/*******************************************/
+
+/* CSS for home page*/
+
+.mainNav {
+  height: 120px;
+}
+
+ .navLogo {
+  height: 20px;
+}
+
+
+/* CSS for wheel animation */
 
 /* Center the container */
 #container {
@@ -59,3 +69,4 @@ img {
   /*  -webkit-animation: spin-me 500ms linear infinite;
   animation: spin-me 500ms linear infinite;*/
 }
+
