@@ -2,64 +2,382 @@
 <html lang="en">
 
 <head>
-    <!-- Bootstrap 5 -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous" />
-    <!-- Bootstrap 5 Icons -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.1/font/bootstrap-icons.css" />
-    
-    <link rel="stylesheet" href="config.css" />
+  <!-- Bootstrap 5 -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous" />
+  <!-- Bootstrap 5 Icons -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.1/font/bootstrap-icons.css" />
 
-    <!-- Latest compiled JavaScript -->
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+  <link rel="stylesheet" href="config.css" />
 
+  <!-- Latest compiled JavaScript -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+
+  <!-- JSON Data -->
+  <script type="text/javascript" src="data.json"></script>
+
+  <title>Home</title>
+  <link rel="icon" type="image/x-icon" href="Images/favicon.ico">
 </head>
 
 <body>
+  <!-- container for page -->
+  <div class="container-fluid p-0">
 
-  <nav class="navbar navbar-expand-lg navbar-light bg-light" id="mainNav">
-    <div class="container-fluid">
-      <!-- <a href="#" class="pull-left"><img id="navLogo" src="Images/just logo.png"></a> -->
-      <a class="navbar-brand" href="#">JustCycle</a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav">
-          <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="#">Home</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="routeFinder.html">Route Finder</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="roulette.html">Roulette</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="about.html">About</a>
-          </li>
-        </ul>
+    <!-- navbar-->
+    <nav class="navbar navbar-expand-lg navbar-light sticky-top mainNav">
+      <div class="container-fluid">
+        <!-- navbar logo -->
+        <a class="navbar-brand" href="index.html">
+          <img src="Images/justCycleLogo.png" alt="Just Cycle logo" width="88" height="38">
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+          aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <!-- navbar items-->
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="index.html">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="routeFinder.html">Route Finder</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="roulette.html">Roulette</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="about.html">About</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+
+    <!-- Jumbotron home banner -->
+    <div class="jumbotron jumbotron-image jumbotronHome">
+      <div class="row p-0 m-0">
+        <div class="col-md-1">
+        </div>
+        <div class="col-md-11 my-5">
+          <h1 class=" display-5">
+            Find your perfect <br> bike route
+          </h1>
+          <p class="mt-0 subHead fw-lighter">
+            tailored to your needs
+          </p>
+          <a href="routeFinder.html" class="btn ctaBig">FIND A ROUTE</a>
+        </div>
       </div>
     </div>
-  </nav>
 
-      
-  
-  
-<div id="container">
-  <header>
-    <h1>Bike wheel spinner</h1>
-  </header>
-  <img src="Images/bikeWheel.png" class="thing-to-spin" />
-</div>
-            
-    
+    <!-- Container for Explore by Type section -->
+    <div class="container">
+      <div class="row mt-5 d-flex justify-content-center align-items-center p-0 m-0">
+        <div class="col-md-12 text-center">
+          <h1 class="display-5 fw-lighter">EXPLORE BY TYPE</h1>
+        </div>
+      </div>
+      <!--Route type card - road -->
+      <div class="row p-0 m-0">
+        <div class="col-md-4 mt-4 col-lg-4">
+          <a href="routeFinder.html?type=road" class="text-black">
+            <div class="card text-center border-white">
+              <div class="card-blur">
+                <img src="Images/RoadCrop.jpg" class="img-fluid rounded-3 shadow-lg cardPics" alt="Road">
+              </div>
+              <div class="card-img-overlay d-flex justify-content-center align-items-center" href="selectedRoute.html">
+                <h1 class="display-5 fw-lighter">ROAD</h1>
+              </div>
+            </div>
+          </a>
+        </div>
+        <!--Route type card - off-road -->
+        <div class="col-md-4 mt-4 col-lg-4">
+          <a href="routeFinder.html?type=offRoad" class="text-black">
+            <div class="card text-center border-white">
+              <div class="card-blur">
+                <img src="Images/Off-roadCropped.jpg" class="img-fluid rounded-3 shadow-lg cardPics" alt="Off-road">
+              </div>
+              <div class="card-img-overlay d-flex justify-content-center align-items-center">
+                <h1 class="display-5 fw-lighter">OFF-ROAD</h1>
+              </div>
+            </div>
+          </a>
+        </div>
+        <!--Route type card - mixed terrain -->
+        <div class="col-md-4 mt-4 col-lg-4">
+          <a href="routeFinder.html?type=mixedTerrain" class="text-black">
+            <div class="card text-center border-white">
+              <div class="card-blur">
+                <img src="Images/MixedTerrainCropped.jpg" class="img-fluid rounded-3 shadow-lg cardPics"
+                  alt="Mixed terrain">
+              </div>
+              <div class="card-img-overlay d-flex justify-content-center align-items-center">
+                <h1 class="display-5 fw-lighter">MIXED TERRAIN</h1>
+              </div>
+            </div>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Bone section with squiggle image and CTA button -->
+    <div class="jumbotron boneSection my-5">
+      <div class="row justify-content-center align-items-center p-0 m-0">
+        <div class="col-md-12 mt-5 text-center">
+          <h1 class="display-6 fw-lighter">
+            FIND THE PERFECT ROUTE FOR YOU
+          </h1>
+          <p class="mt-0 subHead fw-lighter">
+            Use our tailored tool to find cycle routes that match your preferences.
+          </p>
+        </div>
+        <div class="col-md-12 mt-5">
+          <img src="Images/OrangeLineWords.png" class="w-100"
+            alt="Orange wave line - type, distance, elevation, cafe break, ability">
+        </div>
+        <div class="col-md-12 mb-3 mt-5 d-flex justify-content-center">
+          <a href="routeFinder.html" class="btn ctaBig m-4">FIND A ROUTE</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Top 3 routes section -->
+    <div class="container-fluid my-5">
+      <div class="row p-0 m-0">
+        <div class="col-md-12 text-start d-flex justify-content-center align-items-center">
+          <h1 class="display-5 fw-lighter">TOP 3 ROUTES</h1>
+        </div>
+      </div>
+      <!-- content/cards in row populated by javascript - dynamically filtering json data -->
+      <div class="row mt-2 gx-5 p-0 m-0 h-100" id="resultsTopThree">
+
+      </div>
+    </div>
+
+
+    <!-- Cafe section -->
+    <!-- Banner wrap -->
+    <div class="banner-wrap d-flex justify-content-center align-items-center mt-4">
+      <!-- Banner background image -->
+      <img class="banner-bg" src="Images/Cafe.jpg" alt="Cafe interior">
+      <!-- Banner content -->
+      <div class="banner-content justify-content-center align-items-center m-4">
+        <div class="col-12 text-center">
+          <h1 class="display-6 fw-lighter">
+            FANCY A CAFE BREAK?
+          </h1>
+        </div>
+        <div class="col-md-12 d-flex justify-content-center">
+          <a href="routeFinder.html?cafe=1" class="btn ctaBig m-4">ROUTES WITH CAKE</a>
+        </div>
+      </div>
+    </div>
+
+
+    <!-- Explore popular routes section -->
+    <div class="container px-4">
+      <div class="row mt-5 d-flex p-0 m-0">
+        <div class="col-md-12 text-center">
+          <h1 class="display-5 fw-lighter">EXPLORE POPULAR ROUTES</h1>
+        </div>
+      </div>
+      <!-- cards in row populated by javascript - dynamically filtering json data -->
+      <div class="row gx-5 p-0 m-0" id="resultsPopular">
+
+      </div>
+    </div>
+
+
+
+    <!-- svg wave - top of footer -->
+    <div class="spacer footSvg">
+    </div>
+    <!-- Footer - bone background -->
+    <footer class="boneSection">
+      <div class="jumbotron">
+        <div class="row p-0 m-0">
+          <div class="col-md-1">
+          </div>
+          <div class="col-md-5 mt-5">
+            <div class="row p-0 m-0">
+              <div class="col-2">
+              </div>
+              <div class="col-8 justify-content-center align-items-center ">
+                <!-- Footer - logo -->
+                <img src="Images/justCycleLogo.png" class="footLogo">
+                <p class="mt-0 subHead fw-lighter text-center">
+                  <!-- Footer - slogan -->
+                  Find your perfect bike route
+                </p>
+              </div>
+              <div class="col-2">
+              </div>
+            </div>
+          </div>
+          <!-- Footer - subscribe section -->
+          <div class="col-md-5 my-5 text-center">
+            <div class="row p-0 m-0">
+              <div class="col-12">
+                <h5 class="display-5 fw-lighter fs-3">Stay Connected</h5>
+              </div>
+            </div>
+            <div class="row p-0 m-0">
+              <div class="col-12">
+                <p class="subHead fw-lighter fs-5">
+                  <i class="bi bi-envelope"></i>
+                  Keep up to date with our latest routes
+                </p>
+              </div>
+            </div>
+            <div class="row p-0 m-0">
+              <div class="col-2">
+              </div>
+              <div class="col-8">
+                <input type="email" class="form-control" id="inputEmail" aria-describedby="email"
+                  placeholder="Enter your E-mail address">
+                <!-- text inserted by javascript on click of subscribe button -->
+                <p class="subHead fw-lighter fs-6 valid-feedback" id="subMessage" style="display: block;">
+
+                </p>
+              </div>
+              <div class="col-2">
+              </div>
+            </div>
+            <div class="row p-0 m-0">
+              <div class="col-2">
+              </div>
+              <div class="col-8 m-3 text-center">
+                <a class="btn ctaBig" id="subButton">SUBSCRIBE</a>
+              </div>
+              <div class="col-2">
+              </div>
+            </div>
+          </div>
+          <div class="col-1">
+          </div>
+        </div>
+      </div>
+    </footer>
+
+
+  </div>
+
 </body>
 
+<!-- script to build subscribe success message html -->
+<script>
+  //get subscribe button by id
+  subscribeButton = document.getElementById("subButton");
+  successMessage = document.getElementById("subMessage");
+  //when button is clicked, trigger function
+  subscribeButton.addEventListener("click", function () {
+    //add success message
+    successMessage.innerHTML = "<strong> Successfull subscription! </strong>"
+  });
+</script>
+
+
+<!-- script to build result html - top three routes -->
+<script>
+  function buildTopThree(routeJson) {
+    //Get id of top 3 section div
+    resultTop = document.getElementById("resultsTopThree");
+    //Create variable containing number three image
+    var resultsHTMLTop =
+      `<div class="col-md-3 mt-4 col-lg-3 d-flex justify-content-center align-items-center h-100">
+          <img src="Images/Home top 3.jpg" class="img-fluid rounded-3 shadow-lg cardPics" alt="Number three">
+        </div>`;
+
+    //filter json data based on 'topThree' flag
+    routeJsonTop = routeJson.filter(item => item.topThree == 1);
+
+    //Loop through filtered json data - insert item data + append to html
+    for (var item in routeJsonTop) {
+      resultsHTMLTop +=
+        `<div class="col-md-3 mt-4 col-lg-3">
+          <div class="card justify-content-center align-items-center text-center shadow-lg h-100 border-white">
+            <img src="` + routeJsonTop[item]['img'] + `" class="img-fit rounded-circle shadow-lg mt-3" alt="` + routeJsonTop[item]['imgAlt'] + `">
+            <div class="card-body d-flex flex-column justify-content-center align-items-center">
+              <h5 class="card-title">` + routeJsonTop[item]['name'] + `</h5>
+              <p class="card-text fw-lighter">
+                ` + (routeJsonTop[item]['descrip']).replace(/^(.{60}[^\s]*).*/, "$1") + "..." + `
+                
+              </p>
+              <a href="selectedRoute.html?routeId=` + routeJsonTop[item]['id'] + `" class="btn ctaSmall mt-auto">SEE ROUTE</a>
+            </div>
+          </div>
+        </div>`
+    }
+    //Insert variable containing html into page element
+    resultTop.innerHTML = resultsHTMLTop
+  }
+</script>
+
+
+<!-- script to build result html - popular routes -->
+<script>
+  function buildPopular(routeJson) {
+    //Get id of popular routes section div
+    resultSection = document.getElementById("resultsPopular");
+    //Create variable to store html
+    var resultsHTML = ""
+    //filter json data based on 'popular' flag
+    routeJsonFiltered = routeJson.filter(item => item.popular == 1);
+
+    //Loop through json data - insert item data + append to html
+    for (var item in routeJsonFiltered) {
+      resultsHTML += `<div class="col-md-3 mt-4 col-lg-3"> 
+        <div class="card border-white shadow-lg">
+          <img src="` + routeJsonFiltered[item]['map'] + `" class="card-img-top rounded-3 shadow-lg" alt="Route Map">
+            <div class="card-body d-flex flex-column">
+              <h5 class="card-title">` + routeJsonFiltered[item]['name'] + `</h5>
+              <div style="display: flex; justify-content: space-between;">
+                <p class="card-text fw-lighter">
+                  <i class="bi bi-geo-alt"></i>
+                  ` + routeJsonFiltered[item]['location'] + `
+                </p>
+                <p class="card-text fw-lighter">
+                  <i class="bi bi-arrow-up"></i>
+                  ` + routeJsonFiltered[item]['elevationM'] + `
+                </p>
+              </div>
+              <a href="selectedRoute.html?routeId=` + routeJsonFiltered[item]['id'] + `" class="btn ctaSmall mt-auto">SEE ROUTE</a>
+            </div>
+          </div>
+        </div>`
+    }
+    //Insert variable containing html into page element
+    resultSection.innerHTML = resultsHTML
+  }
+
+</script>
+
+<!-- script to load data - uses fetch api to get json data from routeData.json -->
+<script>
+  function loadData() {
+    fetch('/routeData.json')
+      .then(response => response.json())
+      .then(response => {
+        //create global variable dataJson
+        dataJson = response;
+        //invoke functions to build elements on the page containing dynamic content
+        buildTopThree(dataJson);
+        buildPopular(dataJson);
+      })
+      .catch(error => console.log(error));
+  }
+</script>
+
+<!-- Trigger function on page load -->
+<script>
+  window.onload = function () {
+    loadData();
+  };
+</script>
+
+
 </html>
-
-
-
-
-
-
