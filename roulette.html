@@ -1,11 +1,338 @@
-<link rel="stylesheet" href="config.css" />
+<!DOCTYPE html>
+<html lang="en">
 
-<div id="container">
-  <header>
-    <h1>Bike wheel spinner</h1>
-  </header>
-  <img src="Images/bikeWheel.png" class="thing-to-spin" />
+<head>
+  <!-- Bootstrap 5 -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous" />
+  <!-- Bootstrap 5 Icons -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.1/font/bootstrap-icons.css" />
 
-  <footer></footer>
-</div>
-<!-- #container -->
+  <link rel="stylesheet" href="config.css" />
+
+  <!-- Latest compiled JavaScript -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+
+  <!-- Latest compiled Jquery -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+  <title>Roulette</title>
+  <link rel="icon" type="image/x-icon" href="Images/favicon.ico">
+</head>
+
+<body>
+  <!-- container for page -->
+  <div class="container-fluid p-0">
+
+    <!-- navbar-->
+    <nav class="navbar navbar-expand-lg navbar-light sticky-top mainNav">
+      <div class="container-fluid">
+        <!-- navbar logo -->
+        <a class="navbar-brand" href="index.html">
+          <img src="Images/justCycleLogo.png" alt="Just Cycle logo" width="88" height="38">
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+          aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <!-- navbar items-->
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link" href="index.html">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="routeFinder.html">Route Finder</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="roulette.html">Roulette</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="about.html">About</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+
+    <!-- Banner - roulette -->
+    <!-- Banner wrap -->
+    <div class="banner-wrap d-flex justify-content-center align-items-center">
+      <!-- Banner background image -->
+      <img class="banner-bg" src="Images/Roulette banner.jpg" alt="bike wheels on wall">
+      <!-- Banner content -->
+      <div class="banner-content justify-content-center align-items-center m-4">
+        <div class="col-12 text-center">
+          <h1 class="display-6 fw-lighter">
+            ROUTE ROULETTE
+          </h1>
+          <p class="mt-0 subHead fw-lighter">
+            Can’t decide where to cycle? Spin the wheel to pick a route at random!
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <div class="container-fluid mt-5">
+      <div class="row">
+        <div class="col-md-6 mb-5">
+          <div class="row d-flex justify-content-center align-items-center">
+            <div class="col-md-12 d-flex justify-content-center align-items-center">
+              <h1 class="display-6 fw-lighter">
+                Explore somewhere new
+              </h1>
+            </div>
+            <div class="col-md-12 d-flex justify-content-center align-items-center">
+              <p class="subHead fw-lighter">
+                Spin the wheel to find a new route!
+              </p>
+            </div>
+            <div class="col-md-12 d-flex justify-content-center align-items-center">
+              <a class="btn ctaBig m-4" href="javascript:funcResetWheel()">SPIN THE WHEEL</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6 d-flex align-items-center justify-content-center">
+          <div id="container">
+            <img src="Images/bikeWheel.png" id="roulWheel" class="" style="width: 500px;" />
+          </div>
+        </div>
+      </div>
+    </div>
+
+      <!-- svg wave - top of footer -->
+      <div class="spacer footSvg">
+      </div>
+      <!-- Footer - bone background -->
+      <footer class="boneSection">
+        <div class="jumbotron">
+          <div class="row p-0 m-0">
+            <div class="col-md-1">
+            </div>
+            <div class="col-md-5 mt-5">
+              <div class="row p-0 m-0">
+                <div class="col-2">
+                </div>
+                <div class="col-8 justify-content-center align-items-center ">
+                  <!-- Footer - logo -->
+                  <img src="Images/justCycleLogo.png" class="footLogo">
+                  <p class="mt-0 subHead fw-lighter text-center">
+                    <!-- Footer - slogan -->
+                    Find your perfect bike route
+                  </p>
+                </div>
+                <div class="col-2">
+                </div>
+              </div>
+            </div>
+            <!-- Footer - subscribe section -->
+            <div class="col-md-5 my-5 text-center">
+              <div class="row p-0 m-0">
+                <div class="col-12">
+                  <h5 class="display-5 fw-lighter fs-3">Stay Connected</h5>
+                </div>
+              </div>
+              <div class="row p-0 m-0">
+                <div class="col-12">
+                  <p class="subHead fw-lighter fs-5">
+                    <i class="bi bi-envelope"></i>
+                    Keep up to date with our latest routes
+                  </p>
+                </div>
+              </div>
+              <div class="row p-0 m-0">
+                <div class="col-2">
+                </div>
+                <div class="col-8">
+                  <input type="email" class="form-control" id="inputEmail" aria-describedby="email"
+                    placeholder="Enter your E-mail address">
+                    <!-- text inserted by javascript on click of subscribe button -->
+                    <p class="subHead fw-lighter fs-6 valid-feedback" id="subMessage" style="display: block;">
+  
+                    </p>
+                </div>
+                <div class="col-2">
+                </div>
+              </div>
+              <div class="row p-0 m-0">
+                <div class="col-2">
+                </div>
+                <div class="col-8 m-3 text-center">
+                  <a class="btn ctaBig" id="subButton">SUBSCRIBE</a>
+                </div>
+                <div class="col-2">
+                </div>
+              </div>
+            </div>
+            <div class="col-1">
+            </div>
+          </div>
+        </div>
+      </footer>
+
+
+  </div>
+
+  <!-- Result modal -->
+  <div class="modal fade show" id="resultModal" tabindex="-1" aria-labelledby="resultModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+        <div class="modal-header d-flex justify-content-center align-items-center text-center">
+          <h6 class="modal-title display-6 fw-lighter fs-3" id="resultModalLabel">Your result!</h6>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <!-- modal body content populated dynamically by javascript function from json data -->
+        <div class="modal-body" id="resultRandom">
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+</body>
+
+<!-- script to build subscribe success message -->
+<script>
+  //get subscribe button by id
+  subscribeButton = document.getElementById("subButton");
+  successMessage = document.getElementById("subMessage");
+  //when button is clicked, trigger function
+  subscribeButton.addEventListener("click", function () {
+    //add success message
+    successMessage.innerHTML = "<strong> Successfull subscription! </strong>"
+  });
+</script>
+
+
+<!-- script to reset wheel by removing class if exists, before triggering funcSpinWheel func -->
+<script>
+  function funcResetWheel() {
+    wheel = document.getElementById("roulWheel");
+    if (wheel.classList.contains("thing-to-spin")) {
+      wheel.classList.remove("thing-to-spin");
+      void wheel.offsetWidth;
+    }
+    funcSpinWheel();
+    buildResult(dataJson);
+  }
+</script>
+
+<!-- script to start wheel spinning by adding class -->
+<script>
+  function funcSpinWheel() {
+    wheel = document.getElementById("roulWheel");
+    wheel.classList.add("thing-to-spin");
+    roulPopUp()
+  }
+</script>
+
+<!-- script to show modal after 3 seconds -->
+<script>
+  function roulPopUp() {
+    setTimeout(function () {
+      $("#resultModal").modal('show');
+    }, 3000)
+  }
+</script>
+
+
+<!-- script to build result html -->
+<script>
+  function buildResult(routeJson) {
+    //get modal body element - where result will be populated
+    resultRandom = document.getElementById("resultRandom");
+    var resultsHTML = ""
+    let index = 0;
+
+    //select random route using randomly populated index
+    randomRoute = routeJson[Math.floor(Math.random() * routeJson.length)];
+    console.log("random result: ", randomRoute);
+    console.log("random route id is: ", randomRoute['id'])
+    //Loop through json route data - insert item data + append to html
+    resultsHTML +=
+      `
+          <div class="row gx-5">
+            <div class="col-md-3 col-lg-3 d-flex">
+              <img src="` + randomRoute['img'] + `" class="img-fit rounded-circle shadow-lg m-3" alt="` + randomRoute['imgAlt'] + `">
+            </div>
+            <div class="col-md-1 col-lg-1">
+            </div>
+            <div class="col-md-8 col-lg-8">
+              <div class="row">
+                <div class="col-md-12">
+                  <h5 class="">
+                    ` + randomRoute['name'] + `
+                  </h5>
+                </div>
+                <div class="col-12">
+                <p class="card-text fw-lighter">
+                  <i class="bi bi-geo-alt"></i>
+                    ` + randomRoute['location'] + `
+                </p>
+                </div>
+                <div class="col-12 mt-3">
+                   <div style="display: flex; justify-content: space-between;">
+                      <p class="card-text fw-lighter">
+                          <i class="bi bi-arrow-up"></i>
+                          ` + randomRoute['elevationM'] + ` m
+                      </p>
+                      <p class="card-text fw-lighter">
+                          <i class="bi bi-arrow-right"></i>
+                          ` + randomRoute['distanceKm'] + ` km
+                      </p>
+                      <p class="card-text fw-lighter">
+                          <i class="bi bi-map"></i>
+                          ` + randomRoute['typeName'] + `
+                      </p>
+                      <p class="card-text fw-lighter">
+                          <i class="bi bi-bar-chart"></i>
+                          ` + randomRoute['ability'] + `
+                      </p>
+                      <p class="card-text fw-lighter">
+                          <i class="bi bi-cup"></i>
+                          ` + ((randomRoute['cafe'] == 1) ? "available" : "not available") + `
+                      </p>
+                  </div>
+              </div>
+              <div class="col-md-12">
+                  <p class="fw-lighter">
+                    <strong> Summary: </strong> ` + (randomRoute['descrip']).replace(/^(.{100}[^\s]*).*/, "$1") + "..." + `
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="modal-footer d-flex justify-content-center align-items-center">
+            <a href="selectedRoute.html?routeId=` + randomRoute['id'] + `" class="btn ctaSmall">READ MORE</a>
+          </div>
+          `
+    resultRandom.innerHTML = resultsHTML
+  }
+
+</script>
+
+<!-- script to load json route data, assign it to global var 'dataJson' and trigger buildResult() func -->
+<script>
+  function loadData() {
+    fetch('/routeData.json')
+      .then(response => response.json())
+      .then(response => {
+        dataJson = response;
+        console.log(dataJson);
+        buildResult(dataJson);
+      })
+      .catch(error => console.log(error));
+  }
+</script>
+
+<!-- Trigger function on page load -->
+<script>
+  window.onload = function () {
+    loadData();
+  };
+</script>
+
+
+</html>
