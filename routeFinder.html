@@ -1,0 +1,498 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Bootstrap 5 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous" />
+    <!-- Bootstrap 5 Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.1/font/bootstrap-icons.css" />
+
+    <link rel="stylesheet" href="config.css" />
+
+    <!-- Latest compiled JavaScript -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+
+    <title>Route routeFinder</title>
+    <link rel="icon" type="image/x-icon" href="Images/favicon.ico">
+</head>
+
+<body>
+
+    <!-- container for page -->
+    <div class="container-fluid p-0">
+
+        <!-- Navbar -->
+        <nav class="navbar navbar-expand-lg navbar-light sticky-top mainNav">
+            <div class="container-fluid">
+                <!-- navbar logo -->
+                <a class="navbar-brand" href="index.html">
+                    <img src="Images/justCycleLogo.png" alt="Just Cycle logo" width="88" height="38">
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <!-- navbar items-->
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                            <a class="nav-link" href="index.html">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="routeFinder.html">Route Finder</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="roulette.html">Roulette</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="about.html">About</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+
+        <!-- Banner - route finder -->
+        <!-- Banner wrap -->
+        <div class="banner-wrap d-flex justify-content-center align-items-center">
+            <!-- Banner background image -->
+            <img class="banner-bg" src="Images/Banner route finder.jpg" alt="path through trees">
+            <!-- Banner content -->
+            <div class="banner-content justify-content-center align-items-center m-4">
+                <div class="col-12 text-center">
+                    <h1 class="display-6 fw-lighter">
+                        ROUTE FINDER
+                    </h1>
+                    <p class="mt-0 subHead fw-lighter">
+                        Enter your preferences to find a route tailored to you
+                    </p>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="row mt-5 p-0 m-0">
+            <!-- Spacer -->
+            <div class="col-lg-1 col-sm-1">
+            </div>
+            <!-- Your preferences card -->
+            <div class="col-md-3 col-sm-10 mt-3">
+                <div class="card shadow-lg border-white">
+                    <div class="card-body">
+                        <h5 class="card-title display-6 fw-lighter text-center">Your Preferences</h5>
+                        <div class="col-12 mt-2">
+                            <a class="subHead fw-lighter fs-6 text-black" style="text-decoration: none;" href="javascript:location.reload();">
+                                <i class="bi bi-arrow-counterclockwise"></i>
+                                reset
+                            </a>
+                        </div>
+                        <div class="col-12 mt-4">
+                            <!-- Input - selector - route type -->
+                            <label for="type" class="form-label">Type</label>
+                            <select class="form-select" aria-label="Default select example" id="type">
+                                <option value="" selected>All</option>
+                                <option value="road">Road</option>
+                                <option value="offRoad">Off-road</option>
+                                <option value="mixedTerrain">Mixed terrain</option>
+                            </select>
+                        </div>
+
+                        <div class="col-12 mt-3">
+                            <!-- Input - selector - location -->
+                            <label for="location" class="form-label">Location</label>
+                            <select class="form-select" aria-label="Default select example" id="location">
+                                <option value="" selected>All</option>
+                                <option value="Lyndhurst, England, UK">Lyndhurst, England, UK</option>
+                                <option value="Guildford, England, UK">Guildford, England, UK</option>
+                                <option value="Binfield, UK">Binfield, UK</option>
+                                <option value="City of London, UK">City of London, UK</option>
+                                <option value="Hackney, UK">Hackney, UK</option>
+                                <option value="Reading, UK">Reading, UK</option>
+                                <option value="Wandsworth, UK">Wandsworth, UK</option>
+                                <option value="Wendover, England, UK">Wendover, England, UK</option>
+                            </select>
+                        </div>
+
+                        <div class="col-12 mt-3">
+                            <!-- Input - selector - distance -->
+                            <label class="form-label" for="distance">Distance (km)</label>
+                            <select class="form-select" aria-label="Default select example" id="distance">
+                                <option value="0-1000" selected>All</option>
+                                <option value="1-20">1-20km</option>
+                                <option value="21-40">21-40km</option>
+                                <option value="41-60">41-60km</option>
+                                <option value="61-80">61-80km</option>
+                                <option value="80-1000">80km +</option>
+                            </select>
+                        </div>
+
+                        <div class="col-12 mt-3">
+                            <!-- Input - selector - ability -->
+                            <label for="ability" class="form-label">Ability</label>
+                            <select class="form-select" aria-label="Default select example" id="ability">
+                                <option value="" selected>All</option>
+                                <option value="easy">Easy</option>
+                                <option value="medium">Medium</option>
+                                <option value="hard">Hard</option>
+                            </select>
+                        </div>
+
+                        <div class="col-12 mt-3">
+                            <!-- Input - slider - elevation -->
+                            <label class="form-label" for="elevation">Maximum Elevation (m)</label> <span
+                                id='elevationValue'></span>
+                            <div class="range">
+                                <input type="range" class="form-range" min="0" max="650" value="650" step="25"
+                                    id="elevation" oninput="showSliderValue('elevation', 'elevationValue')"
+                                    onchange="showSliderValue('elevation', 'elevationValue')" />
+                            </div>
+                        </div>
+
+
+                        <div class="col-12 mt-3">
+                            <!-- Input - switch - cafe break -->
+                            <label class="form-check-label" for="cafe">Cafe break?</label>
+                            <div class="form-check form-switch">
+                                <input class="form-check-input" type="checkbox" id="cafe">
+                            </div>
+                        </div>
+                        
+                        <!-- Submit button - triggers javascript to filter results data by inputs -->
+                        <div class="d-flex flex-column justify-content-center align-items-center">
+                            <a href="#" class="btn ctaSmall mt-3" id="submitButt">FIND MY ROUTE</a>
+                        </div>
+
+                        <div class="col-12 mt-3 text-center">
+                            <!-- Text - cant decide + link to roulette page -->
+                            <p class="mt-0 subHead fw-lighter fs-6">
+                                Can’t decide?
+                                <a class="mt-0 subHead fw-lighter fs-6 text-black" href="roulette.html"><strong>Spin
+                                        roulette</strong></a>
+                            </p>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-7 col-sm-10 mt-3">
+                <!-- Route finder results -->
+                <div class="container-fluid">
+                    <div class="row p-0 m-0">
+                        <div class="col-md-12 text-start d-flex justify-content-center align-items-center">
+                            <h1 class="display-5 fw-lighter">Your Results</h1>
+                        </div>
+                    </div>
+                    <!-- Route finder results - route cards inserted dynamically from javascript -->
+                    <div class="row gx-5 p-0 m-0 h-100" id="resultsData">
+
+                    </div>
+                </div>
+
+
+
+                <!-- Spacer -->
+            </div>
+            <div class="col-lg-1 col-sm-1"></div>
+        </div>
+
+
+        <!-- svg wave - top of footer -->
+        <div class="spacer footSvg">
+        </div>
+        <!-- Footer - bone background -->
+        <footer class="boneSection">
+            <div class="jumbotron">
+                <div class="row p-0 m-0">
+                    <div class="col-md-1">
+                    </div>
+                    <div class="col-md-5 mt-5">
+                        <div class="row p-0 m-0">
+                            <div class="col-2">
+                            </div>
+                            <div class="col-8 justify-content-center align-items-center ">
+                                <!-- Footer - logo -->
+                                <img src="Images/justCycleLogo.png" class="footLogo">
+                                <p class="mt-0 subHead fw-lighter text-center">
+                                    <!-- Footer - slogan -->
+                                    Find your perfect bike route
+                                </p>
+                            </div>
+                            <div class="col-2">
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Footer - subscribe section -->
+                    <div class="col-md-5 my-5 text-center">
+                        <div class="row p-0 m-0">
+                            <div class="col-12">
+                                <h5 class="display-5 fw-lighter fs-3">Stay Connected</h5>
+                            </div>
+                        </div>
+                        <div class="row p-0 m-0">
+                            <div class="col-12">
+                                <p class="subHead fw-lighter fs-5">
+                                    <i class="bi bi-envelope"></i>
+                                    Keep up to date with our latest routes
+                                </p>
+                            </div>
+                        </div>
+                        <div class="row p-0 m-0">
+                            <div class="col-2">
+                            </div>
+                            <div class="col-8">
+                                <input type="email" class="form-control" id="inputEmail" aria-describedby="email"
+                                    placeholder="Enter your E-mail address">
+                                <!-- text inserted by javascript on click of subscribe button -->
+                                <p class="subHead fw-lighter fs-6 valid-feedback" id="subMessage"
+                                    style="display: block;">
+
+                                </p>
+                            </div>
+                            <div class="col-2">
+                            </div>
+                        </div>
+                        <div class="row p-0 m-0">
+                            <div class="col-2">
+                            </div>
+                            <div class="col-8 m-3 text-center">
+                                <a class="btn ctaBig" id="subButton">SUBSCRIBE</a>
+                            </div>
+                            <div class="col-2">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-1">
+                    </div>
+                </div>
+            </div>
+        </footer>
+
+
+    </div>
+</body>
+
+<!-- script to build subscribe success message html  -->
+<script>
+    //get subscribe button by id
+    subscribeButton = document.getElementById("subButton");
+    successMessage = document.getElementById("subMessage");
+    //when button is clicked, trigger function
+    subscribeButton.addEventListener("click", function () {
+        //add success message
+        successMessage.innerHTML = "<strong> Successfull subscription! </strong>"
+    });
+</script>
+
+<!-- script to show slider value as text -->
+<script>
+    function showSliderValue(slider, sliderText) {
+        //Get slider element by id
+        var slider = document.getElementById(slider);
+        //Set variable to value of slider
+        var sliderNumber = slider.value;
+        //Update text to show slider value
+        document.getElementById(sliderText).textContent = (sliderNumber + "m");
+    }
+</script>
+
+
+
+<!-- script to trigger build results based on input field search -->
+<script>
+    function collectInputs() {
+        //Get inputs from preference card by id's
+        typeInputValue = document.getElementById("type").value
+        locationInputValue = document.getElementById("location").value
+        //split distance string by dash character into array
+        var inputDistanceArray = document.getElementById("distance").value.split("-");
+        //first element of array is minimum distance
+        distanceInputMinValue = inputDistanceArray[0]
+        //second element of array is maximum distance
+        distanceInputMaxValue = inputDistanceArray[1]
+        abilityInputValue = document.getElementById("ability").value
+        elevationInputValue = document.getElementById("elevation").value
+        //get value from cafe checkbox/switch - if ticked then evaluate to 1
+        cafeInputValue = ((document.getElementById("cafe").checked) ? 1 : 0);
+
+        //Invoke buildResults function - passing in data inputs
+        buildResults(dataJson, typeInputValue, locationInputValue, distanceInputMinValue, distanceInputMaxValue, abilityInputValue, elevationInputValue, cafeInputValue);
+    }
+</script>
+
+
+<!-- script to trigger results based on submit button -->
+<script>
+    //Get submit button element by id
+    var prefButt = document.getElementById('submitButt');
+    //invoke collectInputs function
+    prefButt.addEventListener('click', collectInputs) 
+</script>
+
+
+<!-- script to build results based on url input -->
+<script>
+    function getParamData() {
+        //Get route id passed in url parameter 'routeId'
+        const queryString = window.location.search;
+        console.log(queryString);
+        const urlParams = new URLSearchParams(queryString);
+
+        //create array of url params
+        const entries = urlParams.entries();
+
+        //loop through params and set data in form to value of param e.g. links from home page
+        for (const entry of entries) {
+            //Get element by id (param name), update value (param value)
+            if (`${entry[0]}` == "cafe") {
+                document.getElementById(`${entry[0]}`).checked = ((`${entry[1]}` == 1) ? true : false)
+            } else {
+                document.getElementById(`${entry[0]}`).value = `${entry[1]}`
+            }
+        }
+
+        //invoke collectInputs function
+        collectInputs()
+    }
+</script>
+
+
+
+<!-- script to build result html -->
+<script>
+    function buildResults(routeJson, typeInput = "", locationInput = "", distanceInputMin = "", distanceInputMax = "", abilityInput = "", elevationInput = "", cafeInput = "") {
+        //Get results section div by id
+        resultSection = document.getElementById("resultsData");
+        //Create variable to store html
+        var resultsHTML = ""
+
+        console.log("inputs: ",
+            "type:", typeInput,
+            "location:", locationInput,
+            "distance min:", distanceInputMin,
+            "distance max:", distanceInputMax,
+            "ability:", abilityInput,
+            "elevation:", elevationInput,
+            "cafe", cafeInput);
+
+
+        //filter routeJson based on preferences input
+        routeJsonFiltered = routeJson.filter(item =>
+            item.type == ((typeInput == "") ? item.type : typeInput) &&
+            item.location == ((locationInput == "") ? item.location : locationInput) &&
+            item.distanceKm > ((distanceInputMin == "") ? 0 : distanceInputMin) &&
+            item.distanceKm < ((distanceInputMax == "") ? 1000 : distanceInputMax) &&
+            item.ability == ((abilityInput == "") ? item.ability : abilityInput) &&
+            item.elevationM <= ((elevationInput == "") ? 600 : elevationInput) &&
+            item.cafe == ((cafeInput == 1) ? cafeInput : item.cafe)
+        )
+            ;
+
+            //Set variable to contain string with the number of results
+            resultsHTML += `
+            <div class="col-md-12">
+                <p class="mt-0 subHead fw-lighter fs-6">
+                    Search results: ` + routeJsonFiltered.length + `
+                 </p>
+            </div`;
+
+
+        //display results if not empty, else display message
+        if (routeJsonFiltered.length > 0) {
+            //Loop through json data - insert item data + append to html
+            for (var item in routeJsonFiltered) {
+                resultsHTML +=
+                    `
+        <!-- Result item -->
+        <div class="col-md-12 mt-4 col-lg-12">
+            <div class="card shadow-lg border-white flex-row flex-wrap">
+                <!-- Result item image -->
+                <div class="col-5"> <img src="` + routeJsonFiltered[item]['img'] + `"
+                        class="img-fit rounded-circle shadow-lg m-4" alt="` + routeJsonFiltered[item]['imgAlt'] + `"> </div> <!-- Result item text-->
+                <div class="col-6">
+                    <div class="card-body d-flex flex-column">
+                        <h5 class="card-title">` + routeJsonFiltered[item]['name'] + `</h5>
+                        <div class="col-12">
+                            <p class="card-text fw-lighter">
+                                <i class="bi bi-geo-alt"></i>
+                                ` + routeJsonFiltered[item]['location'] + `
+                            </p>
+                        </div>
+                        <div class="col-12 mt-2">
+                            <p class="card-text fw-lighter me-3" style="display:inline">
+                                <i class="bi bi-arrow-up"></i>
+                                ` + routeJsonFiltered[item]['elevationM'] + ` m
+                            </p>
+                            <p class="card-text fw-lighter" style="display:inline">
+                                <i class="bi bi-arrow-right"></i>
+                                ` + routeJsonFiltered[item]['distanceKm'] + ` km
+                            </p>
+                        </div>
+                        <div class="col-12 mt-2">
+                        <p class="card-text fw-lighter me-3" style="display:inline">
+                                <i class="bi bi-map"></i>
+                                ` + routeJsonFiltered[item]['typeName'] + `
+                            </p>
+                            <p class="card-text fw-lighter me-3" style="display:inline">
+                                <i class="bi bi-bar-chart"></i>
+                                ` + routeJsonFiltered[item]['ability'] + `
+                            </p>
+                            <p class="card-text fw-lighter" style="display:inline">
+                                <i class="bi bi-cup"></i>
+                                ` + ((routeJsonFiltered[item]['cafe'] == 1) ? "available" : "not available") + `
+                            </p>
+                        </div>
+                        <div class="col-12 mt-2">
+                        <p class="card-text fw-lighter"> <strong> Summary: </strong> ` + (routeJsonFiltered[item]['descrip']).replace(/^(.{80}[^\s]*).*/, "$1") + "..." + `</p>
+                        <!-- Result item button --> <a href="selectedRoute.html?routeId=` + routeJsonFiltered[item]['id'] + `" class="btn ctaSmall mt-auto">SEE ROUTE</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+         `
+            }
+        } else {
+            resultsHTML += `
+            <div class="col-md-12 mt-4 text-center">
+                <p class="mt-0 subHead fw-lighter fs-6">
+                    There are no results that match your preferences! Why not try something new?
+                        <a class="mt-0 subHead fw-lighter fs-6 text-black" style="text-decoration: none;" href="roulette.html"><strong>Spin roulette</strong></a>
+                 </p>
+            </div>
+            `
+        }
+        //Insert variable containing html into page element
+        resultSection.innerHTML = resultsHTML
+    }
+
+</script>
+
+<!-- script to load data -->
+<script>
+    function loadData() {
+        fetch('/routeData.json')
+            .then(response => response.json())
+            .then(response => {
+                dataJson = response;
+                 //invoke function to get url params, if any exists, they will be used to build elements on the page
+                getParamData();
+            })
+            .catch(error => console.log(error));
+    }
+</script>
+
+
+
+
+<!-- Trigger function on page load -->
+<script>
+    window.onload = function () {
+        loadData();
+    };
+</script>
+
+
+
+</html>
