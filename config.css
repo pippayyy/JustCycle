@@ -1,31 +1,166 @@
+/* CSS for all site pages/
 
-/* CSS for home page*/
 
+
+/* Formatting background colour of nav */
 .mainNav {
-  height: 120px;
+  background-color: white;
 }
 
- .navLogo {
-  height: 20px;
+
+/* Formatting images to size and position */
+.cardPics {
+  object-fit: cover;
+  width: 389px;
+  height: 386px;
+}
+
+/* Formatting card images - full width of card */
+.card-img-top {
+  width: 100%;
+  height: 20vh;
+  object-fit: cover;
+}
+
+/* Formatting images to size and position */
+.img-fit {
+  object-fit: cover;
+  object-position: center;
+  /* I used vw not px for better responsive */
+  width: 14vw;
+  height: 14vw;
+}
+
+
+/* Formatting colour of bone sections */
+.boneSection {
+  background-color: #D6D4BF;
+  ;
+}
+
+/* Formatting of sub heading text style */
+.subHead {
+  font-style: italic;
+  font-size: 24px;
+}
+
+/* Formatting of big call-to-action button */
+.ctaBig {
+  border-radius: 40px;
+  background: #FD7A45;
+  width: 330px;
+  height: 66px;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  font-size: 20px;
+  display: flex;
+  flex-direction: column;
+  color: #fff;
+}
+
+/* Formatting of small call-to-action button */
+.ctaSmall {
+  border-radius: 40px;
+  background: #FD7A45;
+  width: 162px;
+  height: 35px;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  font-size: 12px;
+  display: flex;
+  color: #fff;
+}
+
+
+/* Image src for jumbotron on home page */
+.jumbotronHome {
+  background-image: url('Images/Banner\ home\ wide.jpg');
+}
+
+/* Formatting for jumbotron images */
+.jumbotron-image {
+  background-position: 0 50%;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+/* Formatting of banner wrapper - contains background image and content */
+.banner-wrap {
+  overflow: hidden;
+  position: relative;
+  height: 35vh;
+}
+
+/* Formatting of banner images - opacity */
+.banner-bg {
+  opacity: 0.3;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: auto;
+}
+
+/* Formatting of banner content - sits infront of image */
+.banner-content {
+  position: relative;
+}
+
+/* Formatting of images on about page */
+.aboutPics {
+  object-fit: cover;
+  height: 386px;
+}
+
+/* Spacer to add height in responsive manner */
+.spacer{
+  height: 40vh;
+}
+
+/* Formatting of svg wave used in footer */
+.footSvg{
+  background: url("Images/svgFooter.svg");
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+}
+
+/* Logo in footer */
+.footLogo {
+  width: 24vw;
+}
+
+
+/* Hide the overlay */
+.card-img-overlay {
+  z-index: -1;
+}
+
+/* Hover on card, blur the image */
+.card:hover>.card-blur {
+  filter: blur(3px);
+  opacity: 0.6;
+}
+
+/* Hover on card, show the text by increasing z-index */
+.card:hover>.card-img-overlay {
+  z-index: 1;
+}
+
+/* Hover on navbar items, change text colour to ornage */
+.navbar-light .nav-link:hover {
+  color: #FD7A45 !important;
+}
+
+/* Hover on contact details, change text colour to orange */
+.contactDetails>p:hover {
+  color: #FD7A45;
 }
 
 
 /* CSS for wheel animation */
-
-/* Center the container */
-#container {
-  width: 960px;
-  margin: auto;
-  text-align: center;
-}
-header,
-footer {
-  padding: 20px;
-}
-img {
-  width: 500px;
-}
-
 /******************************************
 /* ANIMATION STYLES                   
 /*******************************************/
@@ -34,6 +169,7 @@ img {
     -webkit-transform: rotateZ(0deg);
     transform: rotateZ(0deg);
   }
+
   100% {
     -webkit-transform: rotateZ(360deg);
     transform: rotateZ(360deg);
@@ -45,28 +181,21 @@ img {
     -webkit-transform: rotateZ(0deg);
     transform: rotateZ(0deg);
   }
+
   100% {
     -webkit-transform: rotateZ(360deg);
     transform: rotateZ(360deg);
   }
 }
 
+/* Roulette wheel spin animation */
 .thing-to-spin {
   /*animation-name*/
   -webkit-animation-name: spin-me;
   animation-name: spin-me;
-  /*animation-iteration-count*/
-  -webkit-animation-iteration-count: infinite;
-  animation-iteration-count: infinite;
-  /*animation-duration*/
   -webkit-animation-duration: 3s;
   animation-duration: 3s;
   /*animation-timing-function*/
   -webkit-animation-timing-function: ease-in-out;
   animation-timing-function: ease-in-out;
-
-  /* Shorthand */
-  /*  -webkit-animation: spin-me 500ms linear infinite;
-  animation: spin-me 500ms linear infinite;*/
 }
-
