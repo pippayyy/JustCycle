@@ -316,7 +316,7 @@
 <!-- script to load json route data, assign it to global var 'dataJson' and trigger buildResult() func -->
 <script>
   function loadData() {
-    fetch('/routeData.json')
+    fetch('routeData.json')
       .then(response => response.json())
       .then(response => {
         dataJson = response;
