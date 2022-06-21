@@ -356,7 +356,7 @@
 <!-- script to load data - uses fetch api to get json data from routeData.json -->
 <script>
   function loadData() {
-    fetch('/routeData.json')
+    fetch('routeData.json')
       .then(response => response.json())
       .then(response => {
         //create global variable dataJson
