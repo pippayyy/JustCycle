@@ -472,7 +472,7 @@
 <!-- script to load data -->
 <script>
     function loadData() {
-        fetch('/routeData.json')
+        fetch('routeData.json')
             .then(response => response.json())
             .then(response => {
                 dataJson = response;
